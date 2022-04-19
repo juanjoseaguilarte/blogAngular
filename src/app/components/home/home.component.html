@@ -12,3 +12,14 @@
           </div>
         </div>
       </nav>
+
+      <section class="d-flex">
+        <article class="card m-2" *ngFor="let post of arrPosts" >
+          <h2>{{ post.title }}</h2>
+          <h4>{{ post.category }}</h4>
+          <h4>{{ post.author }}</h4>
+          <h4>{{ post.date }}</h4>
+        </article>
+      </section>
+
+  
