@@ -1,4 +1,13 @@
-<app-home> </app-home>
-
-
-aaaa
+<div class="container mt-3 shadow">
+    <div class="row border border-1 w-75">
+        <div class="col">
+            <h2>Vista Detallada Del Viaje</h2>
+            <h5 class="card-title">{{ miPost.title }}</h5>
+            <ul>
+                <li>Autor: {{ miPost.author }} </li>
+                <li>Fecha: {{ miPost.date}} </li>
+            </ul>
+            <img src="{{ miPost.image }}" class="w-75 align-center" alt="{{ miPost.title }}">
+        </div>
+    </div>
+</div>

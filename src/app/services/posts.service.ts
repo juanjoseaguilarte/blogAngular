@@ -25,7 +25,9 @@ export class PostsService {
       this.arrPosts.push(nuevoPost)
       this.id++;
       this.router.navigate(['/home'])
+  }
 
-
+  getPostById(pId:number): Post | any{
+    return this.arrPosts.find( (post) => post.id === pId);
   }
 }
