@@ -7,6 +7,8 @@ import { HomeComponent } from './components/home/home.component';
 import { BlogComponent } from './components/blog/blog.component';
 import { FormularioComponent } from './components/formulario/formulario.component';
 import { ViewComponent } from './components/view/view.component';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -14,11 +16,13 @@ import { ViewComponent } from './components/view/view.component';
     HomeComponent,
     BlogComponent,
     FormularioComponent,
-    ViewComponent
+    ViewComponent,
+    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule 
+    AppRoutingModule ,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
