@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PostsService } from 'src/app/services/posts.service';
+import { Post } from 'src/app/interfaces/post';
 
 @Component({
   selector: 'app-blog',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BlogComponent implements OnInit {
 
-  constructor() { }
+  arrPosts: Post[] = [];
+
+  constructor(
+    private postsService: PostsService,
+  ) { }
 
   ngOnInit(): void {
+    this.arrPosts = this.postsService.getAllPosts();
+    console.log(this.arrPosts)
   }
 
 }

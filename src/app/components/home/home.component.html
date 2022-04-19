@@ -1,6 +1,6 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">Blogging</a>
+          <a class="navbar-brand" [routerLink]="['/home']" >Blogging</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -12,14 +12,3 @@
           </div>
         </div>
       </nav>
-
-      <section class="d-flex">
-        <article class="card m-2" *ngFor="let post of arrPosts" >
-          <h2>{{ post.title }}</h2>
-          <h4>{{ post.category }}</h4>
-          <h4>{{ post.author }}</h4>
-          <h4>{{ post.date }}</h4>
-        </article>
-      </section>
-
-  
