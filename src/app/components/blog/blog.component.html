@@ -1,14 +1,15 @@
-<section class="d-flex">
-  <div class="card m-2 col-5" *ngFor="let post of arrPosts">
-    <img src="{{ post.image }}" class="card-img-top" alt="{{ post.title }}">
-    <div class="card-body">
-      <h5 class="card-title">{{ post.title }}</h5>
-      <p class="card-text">{{ post.author }}</p>
-      <p class="card-text">{{ post.category}}</p>
-      <p class="card-text">{{ post.date}}</p>
-      <a [routerLink]="['/post/', post.id]"  class="btn btn-primary">Mas Detalle</a>
+
+<div class="container">
+  <section class="row">
+    <div class="card m-2 col-3" *ngFor="let post of arrPosts">
+      <img src="{{ post.image }}" class="card-img-top" alt="{{ post.title }}">
+      <div class="card-body">
+        <!-- <h5 class="card-title">{{ post.title }}</h5> -->
+        <p class="card-text">{{ post.author }}</p>
+        <!-- <p class="card-text">{{ post.category}}</p> -->
+        <!-- <p class="card-text">{{ post.date}}</p> -->
+        <a [routerLink]="['/post/', post.id]"  class="btn btn-primary">Mas Detalle</a>
+      </div>
     </div>
-  </div>
-</section>
-
-
+  </section>
+</div>

@@ -4,5 +4,5 @@ export interface Post {
     author: string;
     image: string;
     date: string;
-    category: string;
+    category: number;
 }

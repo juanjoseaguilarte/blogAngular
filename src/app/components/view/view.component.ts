@@ -23,6 +23,6 @@ export class ViewComponent implements OnInit {
       // console.log(id)
       this.miPost = this.postsServices.getPostById(id);
     })
-    console.log(this.miPost)
+    // console.log(this.miPost)
   }
 }

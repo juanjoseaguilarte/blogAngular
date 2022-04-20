@@ -23,6 +23,6 @@ export class CategoriesService {
   }
   
   getPostsByCategoria(pCat : Category){
-    return this.arrPosts.filter( (post) => { post.category === pCat.title})
+    return this.arrPosts.filter( (post) => { post.category === pCat.id})
   }
 }

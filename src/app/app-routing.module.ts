@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: 'home', component: BlogComponent },
   { path: 'new', component: FormularioComponent },
   { path: 'post/:idpost', component: ViewComponent },
-  { path: 'category/:categoryTitle', component: HomeComponent },
+  { path: 'category/:categoryTitle', component: BlogComponent },
 ];
 
 @NgModule({

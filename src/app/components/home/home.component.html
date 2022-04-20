@@ -6,9 +6,21 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-              <a class="nav-link active" aria-current="page" [routerLink]="['/home']">Home</a>
+              <a class="nav-link" aria-current="page" [routerLink]="['/home']">Home</a>
               <a class="nav-link" [routerLink]="['/new']">New</a>
             </div>
           </div>
+          
+            <select  (change)="filtrar($event)" name="category" class="form-select me-3 ">
+              <option value="">Filtra Por:</option>
+              <option
+              *ngFor="let categori of arrCategories"
+              
+              [value]="categori.id"
+              [routerLink]="['/category/', categori.id]"
+              >
+              {{ categori.title }}
+            </option>
+          </select>
         </div>
       </nav>
