@@ -12,14 +12,14 @@
           </div>
           
             <select  (change)="filtrar($event)" name="category" class="form-select me-3 m-sm-2">
-              <option value="">Filtra Por:</option>
-              <option
-              *ngFor="let categori of arrCategories"
               
-              [value]="categori.id"
-              [routerLink]="['/category/', categori.id]"
-              >
+              <option  value="">Elige Un Filtro</option>
+
+              <option *ngFor="let categori of arrCategories" [value]="categori.id"
+              [routerLink]="['/category/', categori.id]">
+
               {{ categori.title }}
+
             </option>
           </select>
         </div>
