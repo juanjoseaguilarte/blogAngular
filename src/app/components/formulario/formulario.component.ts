@@ -31,7 +31,8 @@ export class FormularioComponent implements OnInit {
         Validators.required
       ]),
       fecha: new FormControl('', [
-        Validators.required
+        Validators.required,
+        Validators.pattern(/\d{2}-\d{2}-\d{4}/)
       ]),
       category: new FormControl('', [
         Validators.required
@@ -46,7 +47,7 @@ export class FormularioComponent implements OnInit {
 
   recogerDatosForm(){
     this.postsService.agregarPost(this.formulario.value)
-    console.log(this.formulario.errors)
+    //console.log(this.formulario.errors)
     //console.log(this.formulario.value)
   }
   checkControl(controlName: string, errorName: string): boolean {

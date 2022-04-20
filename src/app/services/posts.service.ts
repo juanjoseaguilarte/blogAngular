@@ -9,7 +9,7 @@ import { Post } from '../interfaces/post';
 export class PostsService {
 
   private arrPosts: Post[];
-  id: number = 6;
+  id: number = 9;
 
   constructor(private router : Router) { 
     this.arrPosts = POSTS

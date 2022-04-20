@@ -49,5 +49,21 @@ export const POSTS: Post[] = [
     date: '10-10-2022',
     category: 1,
   },
+  {
+    id: 7,
+    title: 'Lorem ipsuctetur adipiscing elit. Ut vulputate ultrices purus a porttitor. Integer egestas blandit pulvinar. Sed ultrices sem quis dolor vulputate iaculis. Aenean gravida purus vel cursus volutpat. Donec varius tortor sit amet scelerisque interdum. Proin ac.',
+    author: 'Cristiano Ronaldo 7',
+    image: 'https://images.pexels.com/photos/8664798/pexels-photo-8664798.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+    date: '10-1-2022',
+    category: 1,
+  },
+  {
+    id: 8,
+    title: 'Lorem ipsuctetur adipiscing elit. Ut vulputate ultrices purus a porttitor. Integer egestas blandit pulvinar. Sed ultrices sem quis dolor vulputate iaculis. Aenean gravida purus vel cursus volutpat. Donec varius tortor sit amet scelerisque interdum. Proin ac.',
+    author: 'Cristiano Ronaldo 8',
+    image: 'https://images.pexels.com/photos/8664798/pexels-photo-8664798.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+    date: '10-1-2022',
+    category: 1,
+  },
 
 ]
