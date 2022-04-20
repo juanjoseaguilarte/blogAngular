@@ -22,33 +22,39 @@ export class FormularioComponent implements OnInit {
   ) {
     this.formulario = new FormGroup({
       title: new FormControl('', [
-        Validators.required,
-        Validators.minLength(5)
+        Validators.required
       ]),
       author: new FormControl('', [
-        Validators.required,
-        Validators.minLength(5)
+        Validators.required
       ]),
       image: new FormControl('', [
-        Validators.required,
-        Validators.minLength(5)
+        Validators.required
       ]),
       fecha: new FormControl('', [
-        Validators.required,
+        Validators.required
       ]),
       category: new FormControl('', [
-        Validators.required,
+        Validators.required
       ]),
     })
     }
 
   ngOnInit(): void {
     this.arrCategories =this.cateforiesService.getAllCategories();
-    console.log(this.arrCategories)
+    //console.log(this.arrCategories)
   }
 
   recogerDatosForm(){
     this.postsService.agregarPost(this.formulario.value)
-    console.log(this.formulario.value)
+    console.log(this.formulario.errors)
+    //console.log(this.formulario.value)
+  }
+  checkControl(controlName: string, errorName: string): boolean {
+    if (this.formulario.get(controlName)?.hasError(errorName) && this.formulario.get(controlName)?.touched) {
+        return true;
+    } else {
+        return false;
+    }
+
   }
 }

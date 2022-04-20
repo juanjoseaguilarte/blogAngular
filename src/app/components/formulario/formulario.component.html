@@ -1,37 +1,51 @@
+<p>formulario: {{ formulario.valid }}</p>
 <div class="container">
   <div class="row">
     <div class="col-4">
       
-      <form class="mt-3" [formGroup]="formulario" (ngSubmit)="recogerDatosForm()">
+      <form class="mt-3 shadow p-3" [formGroup]="formulario" (ngSubmit)="recogerDatosForm()">
         <div>
           <label for="title" class="form-label">Título</label>
           <input placeholder="Introduce un título" class="form-control" type="text" id="title" name="title" formControlName="title"/>
+          <p class="error" *ngIf="checkControl('title','required')">Campo es requirido</p>
+
+     
         </div>
 
         <div>
           <label for="author" class="form-label">Autor</label>
           <input placeholder="Introduce el Autor" class="form-control" type="text" id="author" name="author"  formControlName="author"/>
+          <p class="error" *ngIf="checkControl('name','required')">Campo es requirido</p>
+
+        
         </div>
 
         <div>
           <label for="image" class="form-label">URL Imagen</label>
-          <input placeholder="Introduce la URL de la imagen" class="form-control" type="text" id="image" name="image" formControlName="img"/>
+          <input placeholder="Introduce la URL de la imagen" class="form-control" type="text" id="image" name="image" formControlName="image"/>
+          <p class="error" *ngIf="checkControl('name','required')">Campo es requirido</p>
+
+       
         </div>
 
         <div>
           <label for="date" class="form-label">Fecha</label>
           <input placeholder="Introduce la fecha del viaje" class="form-control" type="text" id="fecha" name="fecha" formControlName="fecha"/>
+          <p class="error" *ngIf="checkControl('name','required')">Campo es requirido</p>
+
         </div>
 
         <div>
           <select formControlName="category" class="form-select mt-3">
-            <option value="">Selecciona una categoría</option>
+            <option>Selecciona una categoría</option>
             <option [ngValue]="categori.id" *ngFor="let categori of arrCategories" formControlName="category" >
               {{ categori.title }}
             </option>
           </select>
+          <p class="error" *ngIf="checkControl('name','required')">Campo es requirido</p>
+
         </div>
-        <input type="submit" class="btn btn-danger my-3" value="Guardar"/>
+        <input type="submit" class="btn btn-danger my-3" value="Guardar" [disabled]="!formulario.valid"/>
       </form>
     </div>
   </div>
