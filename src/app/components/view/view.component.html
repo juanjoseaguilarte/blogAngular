@@ -1,0 +1,14 @@
+<div class="container mt-3 ">
+    <div class="row border border-1 w-50 shadow">
+        <div class="col">
+            <h2 class="mt-2 text-center">Vista Detallada Del Viaje</h2>
+            <hr>
+            <h5 class="parrafo text-center">{{ miPost.title }}</h5>
+            <ul class="text-center">
+                <li><span>Autor:</span> {{ miPost.author }} </li>
+                <li><span>Fecha:</span> {{ miPost.date}} </li>
+            </ul>
+            <img src="{{ miPost.image }}" class="w-75 rounded mx-auto d-block mb-4" alt="{{ miPost.title }}">
+        </div>
+    </div>
+</div>

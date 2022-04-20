@@ -1,0 +1,14 @@
+<div class="container">
+  <section class="row d-flex justify-content-evenly">
+    <div class="card m-2 col-5 col-md-3 shadow" *ngFor="let post of arrPosts">
+      <img src="{{ post.image }}" class="mt-2 card-img-top" alt="{{ post.title }}">
+      <div class="card-body">
+        <!-- <h5 class="card-title">{{ post.title }}</h5> -->
+        <p class="card-text">{{ post.author }}</p>
+        <!-- <p class="card-text">{{ post.category}}</p> -->
+        <!-- <p class="card-text">{{ post.date}}</p> -->
+        <a [routerLink]="['/post/', post.id]"  class="btn btn-primary">Mas Detalle</a>
+      </div>
+    </div>
+  </section>
+</div>
