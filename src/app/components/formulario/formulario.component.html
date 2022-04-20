@@ -16,7 +16,7 @@
           <label for="author" class="form-label">Autor</label>
           <input placeholder="Introduce el Autor" class="form-control" type="text" id="author" name="author"  formControlName="author"/>
 
-          <p class="error" *ngIf="checkControl('name','required')">Campo es requirido</p>
+          <p class="error" *ngIf="checkControl('author','required')">Campo es requirido</p>
 
         </div>
 
@@ -24,23 +24,25 @@
           <label for="image" class="form-label">URL Imagen</label>
           <input placeholder="Introduce la URL de la imagen" class="form-control" type="text" id="image" name="image" formControlName="image"/>
 
-          <p class="error" *ngIf="checkControl('name','required')">Campo es requirido</p>
+          <p class="error" *ngIf="checkControl('image','required')">Campo es requirido</p>
+          <p class="error" *ngIf="checkControl('image','pattern')">No es una URL válida</p>
+
 
         </div>
 
         <div>
-          <label for="date" class="form-label">Fecha</label>
+          <label for="fecha" class="form-label">Fecha</label>
           <input placeholder="Introduce la fecha del viaje" class="form-control" type="text" id="fecha" name="fecha" formControlName="fecha"/>
 
-          <p class="error" *ngIf="checkControl('name','required')">Campo es requirido</p>
-          <p class="error" *ngIf="checkControl('name','required')">No es una fecha valida</p>
+          <p class="error" *ngIf="checkControl('fecha','required')">Campo es requirido</p>
+          <p class="error" *ngIf="checkControl('fecha','pattern')">No es una fecha valida</p>
 
         </div>
 
         <div>
-          <select formControlName="category" class="form-select mt-3">
+          <select formControlName="category" class="form-select mt-3" formControlName="category" >
             <option>Selecciona una categoría</option>
-            <option [ngValue]="categori.id" *ngFor="let categori of arrCategories" formControlName="category" >
+            <option [ngValue]="categori.id" *ngFor="let categori of arrCategories" >
               {{ categori.title }}
             </option>
           </select>
