@@ -1,69 +1,37 @@
 <div class="container">
   <div class="row">
     <div class="col-4">
-      <form
-        class="mt-3"
-        #formPosts="ngForm"
-        (ngSubmit)="recogerDatosForm(formPosts)">
-
+      
+      <form class="mt-3" [formGroup]="formulario" (ngSubmit)="recogerDatosForm()">
         <div>
           <label for="title" class="form-label">Título</label>
-          <input
-            class="form-control"
-            type="text"
-            id="title"
-            name="title"
-            ngModel
-          />
+          <input placeholder="Introduce un título" class="form-control" type="text" id="title" name="title" formControlName="title"/>
         </div>
 
         <div>
           <label for="author" class="form-label">Autor</label>
-          <input
-            class="form-control"
-            type="text"
-            id="author"
-            name="author"
-            ngModel
-          />
+          <input placeholder="Introduce el Autor" class="form-control" type="text" id="author" name="author"  formControlName="author"/>
         </div>
 
         <div>
           <label for="image" class="form-label">URL Imagen</label>
-          <input
-            class="form-control"
-            type="text"
-            id="image"
-            name="image"
-            ngModel
-          />
+          <input placeholder="Introduce la URL de la imagen" class="form-control" type="text" id="image" name="image" formControlName="img"/>
         </div>
 
         <div>
           <label for="date" class="form-label">Fecha</label>
-          <input
-            class="form-control"
-            type="text"
-            id="fecha"
-            name="fecha"
-            ngModel
-          />
+          <input placeholder="Introduce la fecha del viaje" class="form-control" type="text" id="fecha" name="fecha" formControlName="fecha"/>
         </div>
 
         <div>
-          <select name="category" ngModel class="form-select mt-3">
+          <select formControlName="category" class="form-select mt-3">
             <option value="">Selecciona una categoría</option>
-            <option
-              [value]="categori.title"
-              *ngFor="let categori of arrCategories"
-            >
+            <option [ngValue]="categori.id" *ngFor="let categori of arrCategories" formControlName="category" >
               {{ categori.title }}
             </option>
           </select>
         </div>
-        
         <input type="submit" class="btn btn-danger my-3" value="Guardar"/>
-        
       </form>
     </div>
   </div>

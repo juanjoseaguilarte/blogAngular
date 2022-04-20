@@ -24,12 +24,14 @@ export class BlogComponent implements OnInit {
     
   }
   ngDoCheck(): void {
+    
         this.arrPosts = this.postsService.getAllPosts();
         this.activatedRoute.params.subscribe( params => 
           this.categoriaId = params['categoryTitle'])
+          // this.categoriaId = parseInt(params['categoryTitle'])) -- No me carga todos, preguntar pq
 
         if(this.categoriaId !== undefined){
-          this.arrPosts = this.arrPosts.filter( (post) => post.id == this.categoriaId)
+          this.arrPosts = this.arrPosts.filter( (post) => post.category == this.categoriaId)
         }else{
           this.arrPosts = this.postsService.getAllPosts();
         }
